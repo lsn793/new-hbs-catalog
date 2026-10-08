@@ -24,6 +24,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
           <nav class="main-nav" aria-label="Main navigation">
             <a routerLink="/beetles" routerLinkActive="active">The collection</a>
             <a class="nav-index" routerLink="/index" routerLinkActive="active">Name index</a>
+            <a class="nav-groups" routerLink="/groups" routerLinkActive="active">Groups</a>
           </nav>
         </div>
       </header>
