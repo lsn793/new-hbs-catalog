@@ -49,12 +49,13 @@ import { BeetleCatalogService } from './beetle-catalog.service';
     </section>
     <section class="page-wrap home-lower">
       <div>
-        <div class="eyebrow">Two ways to wander</div>
+        <div class="eyebrow">Three ways to wander</div>
         <h2>Curiosity has<br>its own order.</h2>
       </div>
       <div>
-        <p>Move through the collection one specimen at a time, with records arranged as distinct natural-history notes. Or take the well-worn path from A to Z when a name is already on the tip of your tongue.</p>
+        <p>Browse specimens one at a time, find a name in the alphabetical index, or explore the collection grouped by family and genus.</p>
         <a class="button-link" routerLink="/beetles">Step inside the cabinet <span aria-hidden="true">↗</span></a>
+        <a class="button-link secondary" routerLink="/groups">Browse by family or genus <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   `,

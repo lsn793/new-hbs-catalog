@@ -33,6 +33,7 @@ A small natural-history catalog for browsing beetle records loaded from a hosted
 - Home page links to the specimen collection and alphabetical name index.
 - Collection cards display available beetle fields, support search, and have stable fragment links.
 - Index entries link directly to their matching collection cards.
+- Groups page organizes the collection by family or genus, with links back to each record card.
 - Loading, empty, and fetch/parse error states are shown explicitly.
 
 ## User preferences
