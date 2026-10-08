@@ -59,7 +59,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                     }
                   </dl>
                 </div>
-                <a class="card-link" [routerLink]="['/beetles']" [fragment]="record.id" [attr.aria-label]="'Direct link to ' + catalog.displayName(record)">Open record <span aria-hidden="true">↗</span></a>
+                <a class="card-link" [routerLink]="['/beetles', record.id]" [attr.aria-label]="'View details for ' + catalog.displayName(record)">View details <span aria-hidden="true">↗</span></a>
               </article>
             }
           </div>
