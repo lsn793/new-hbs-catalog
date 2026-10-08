@@ -6,6 +6,8 @@ export type BeetleRecord = {
   name?: string;
   commonName?: string;
   scientificName?: string;
+  description?: string;
+  image?: string | string[];
   genus?: string;
   family?: string;
   [key: string]: unknown;
@@ -13,7 +15,7 @@ export type BeetleRecord = {
 
 export type CatalogState = 'loading' | 'ready' | 'error';
 
-const coreFields = new Set(['id', 'slug', 'name', 'commonName', 'scientificName', 'image', 'genus', 'family']);
+const coreFields = new Set(['id', 'slug', 'name', 'commonName', 'scientificName', 'description', 'image', 'genus', 'family']);
 const LOCAL_PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}images/beetle-specimen.png`;
 
 function slugify(value: string): string {
@@ -82,22 +84,40 @@ export class BeetleCatalogService {
     return record.id;
   }
 
-  hasPlaceholderImage(record: BeetleRecord): boolean {
-    const image = typeof record.image === 'string' ? record.image.trim() : '';
-    return !image || image.replace(/^\.?\//, '') === 'images/beetle-specimen.png';
+  imagePaths(record: BeetleRecord): string[] {
+    const values = Array.isArray(record.image) ? record.image : [record.image];
+    return values.filter((value): value is string => typeof value === 'string' && value.trim().length > 0)
+      .map((value) => value.trim());
+  }
+
+  imageUrls(record: BeetleRecord): string[] {
+    const paths = this.imagePaths(record);
+    return (paths.length ? paths : [this.placeholderImageUrl]).map((image) => this.resolveImageUrl(image));
   }
 
   imageUrl(record: BeetleRecord): string {
-    const image = typeof record.image === 'string' ? record.image.trim() : '';
-    if (!image || this.hasPlaceholderImage(record)) return this.placeholderImageUrl;
-    if (/^(?:https?:)?\/\//i.test(image) || image.startsWith('data:image/')) return image;
-    return `${import.meta.env.BASE_URL}${image.replace(/^\.?\//, '').replace(/^\/+/, '')}`;
+    return this.imageUrls(record)[0] ?? this.placeholderImageUrl;
   }
 
-  imageAlt(record: BeetleRecord): string {
-    return this.hasPlaceholderImage(record)
+  hasPlaceholderImage(record: BeetleRecord, index = 0): boolean {
+    const paths = this.imagePaths(record);
+    return paths.length === 0 || this.isPlaceholderPath(paths[index] ?? '');
+  }
+
+  imageAlt(record: BeetleRecord, index = 0): string {
+    return this.hasPlaceholderImage(record, index)
       ? `Generic beetle illustration placeholder for ${this.displayName(record)}`
-      : this.displayName(record);
+      : `${this.displayName(record)} — image ${index + 1}`;
+  }
+
+  private isPlaceholderPath(image: string): boolean {
+    return image.trim().replace(/^\.?\//, '') === 'images/beetle-specimen.png';
+  }
+
+  private resolveImageUrl(image: string): string {
+    if (this.isPlaceholderPath(image)) return this.placeholderImageUrl;
+    if (/^(?:https?:)?\/\//i.test(image) || image.startsWith('data:image/')) return image;
+    return `${import.meta.env.BASE_URL}${image.replace(/^\.?\//, '').replace(/^\/+/, '')}`;
   }
 
   taxonomyValue(value: unknown): string {

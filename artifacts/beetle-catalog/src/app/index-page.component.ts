@@ -30,7 +30,7 @@ type NameGroup = { letter: string; records: BeetleRecord[] };
               <h2 class="index-letter" [id]="'heading-' + group.letter">{{ group.letter }}</h2>
               <ul class="index-list">
                 @for (record of group.records; track record.id) {
-                  <li><a [routerLink]="['/beetles']" [fragment]="record.id"><span>{{ catalog.displayName(record) }}</span>@if (record.scientificName) { <em>{{ record.scientificName }}</em> }</a></li>
+                  <li><a [routerLink]="['/beetles', record.id]"><span>{{ catalog.displayName(record) }}</span>@if (record.scientificName) { <em>{{ record.scientificName }}</em> }</a></li>
                 }
               </ul>
             </section>

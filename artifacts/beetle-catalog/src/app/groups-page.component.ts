@@ -21,7 +21,7 @@ const GROUP_FIELDS: Array<{ field: GroupField; label: string }> = [
       <header class="page-heading">
         <div class="eyebrow">Reference · Classification</div>
         <h1>Find your branch</h1>
-        <p>Explore the records by order, suborder, superfamily, family, tribe, or genus, then open any beetle card for its complete details.</p>
+        <p>Explore the records by order, suborder, superfamily, family, tribe, or genus, then open a beetle's full details.</p>
       </header>
 
       @if (catalog.state() === 'loading') {
@@ -35,7 +35,7 @@ const GROUP_FIELDS: Array<{ field: GroupField; label: string }> = [
       } @else if (catalog.records().length === 0) {
         <section class="state-panel">
           <div><div class="eyebrow">No records filed</div><h2>No beetles to group yet</h2>
-            <p>Add beetle records to the JSON file to organize the collection by family or genus.</p></div>
+            <p>Add beetle records to the JSON file to organize the collection by any available taxonomic rank.</p></div>
         </section>
       } @else {
         <div class="group-controls">
@@ -58,7 +58,7 @@ const GROUP_FIELDS: Array<{ field: GroupField; label: string }> = [
               <ul class="taxon-records">
                 @for (record of group.records; track record.id) {
                   <li>
-                    <a [routerLink]="['/beetles']" [fragment]="record.id">
+                    <a [routerLink]="['/beetles', record.id]">
                       <span class="taxon-record-name">{{ catalog.displayName(record) }}</span>
                       @if (record.scientificName) { <em class="taxon-record-scientific">{{ record.scientificName }}</em> }
                     </a>
