@@ -1,36 +1,39 @@
-# [Project name]
+# Beetle Catalog
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A small natural-history catalog for browsing beetle records loaded from a hosted JSON file.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/beetle-catalog run dev` — run the catalog preview
+- `pnpm --filter @workspace/beetle-catalog run typecheck` — check the Angular app
+- `pnpm --filter @workspace/beetle-catalog run build` — build the static site
+- Update `artifacts/beetle-catalog/src/app/data-config.ts` to set the hosted JSON URL.
+- The hosted server must allow browser requests from the catalog's origin (CORS).
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: Angular 19, standalone components and Angular Router
+- Dev server and static build: Vite
+- Catalog data: fetched as JSON by the browser; no database or catalog API is required
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/beetle-catalog/src/app/` — app shell, pages, routes, and JSON loader
+- `artifacts/beetle-catalog/src/app/data-config.ts` — hosted JSON URL
+- `artifacts/beetle-catalog/public/data/beetles.json` — sample data used by default
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The catalog accepts either a top-level JSON array or an object with a `beetles` array. Each record can include arbitrary extra attributes.
+- Angular uses its runtime compiler with Vite so the catalog does not require a separate Angular CLI build service.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Home page links to the specimen collection and alphabetical name index.
+- Collection cards display available beetle fields, support search, and have stable fragment links.
+- Index entries link directly to their matching collection cards.
+- Loading, empty, and fetch/parse error states are shown explicitly.
 
 ## User preferences
 
@@ -38,7 +41,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Replace the sample URL in `data-config.ts` with the hosted JSON file URL. The remote host must send CORS headers allowing the catalog origin.
 
 ## Pointers
 

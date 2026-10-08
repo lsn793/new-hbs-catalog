@@ -1,0 +1,1 @@
+- [Angular Vite compiler](angular-vite-compiler.md) — keep this catalog on Angular's runtime compiler; the Vite Angular adapter could not install its required build dependency.

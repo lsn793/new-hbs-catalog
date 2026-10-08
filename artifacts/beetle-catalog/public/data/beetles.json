@@ -1,0 +1,71 @@
+[
+  {
+    "id": "seven-spot-ladybird",
+    "commonName": "Seven-spot ladybird",
+    "scientificName": "Coccinella septempunctata",
+    "genus": "Coccinella",
+    "family": "Coccinellidae",
+    "distribution": "Europe, Asia and North America",
+    "habitat": "Grassland, gardens and field margins"
+  },
+  {
+    "id": "violet-ground-beetle",
+    "commonName": "Violet ground beetle",
+    "scientificName": "Carabus violaceus",
+    "genus": "Carabus",
+    "family": "Carabidae",
+    "habitat": "Woodland edges and gardens",
+    "activity": "Nocturnal"
+  },
+  {
+    "id": "stag-beetle",
+    "commonName": "Stag beetle",
+    "scientificName": "Lucanus cervus",
+    "genus": "Lucanus",
+    "family": "Lucanidae",
+    "distribution": "Europe",
+    "habitat": "Mature woodland and parks"
+  },
+  {
+    "id": "green-tiger-beetle",
+    "commonName": "Green tiger beetle",
+    "scientificName": "Cicindela campestris",
+    "genus": "Cicindela",
+    "family": "Carabidae",
+    "habitat": "Bare ground, heathland and paths",
+    "season": "Spring and summer"
+  },
+  {
+    "id": "rose-chafer",
+    "commonName": "Rose chafer",
+    "scientificName": "Cetonia aurata",
+    "genus": "Cetonia",
+    "family": "Scarabaeidae",
+    "habitat": "Gardens, woodland and flower-rich grassland"
+  },
+  {
+    "id": "devil-coach-horse",
+    "commonName": "Devil's coach horse",
+    "scientificName": "Ocypus olens",
+    "genus": "Ocypus",
+    "family": "Staphylinidae",
+    "habitat": "Gardens, woodland and hedgerows",
+    "activity": "Mostly nocturnal"
+  },
+  {
+    "id": "violet-oil-beetle",
+    "commonName": "Violet oil beetle",
+    "scientificName": "Meloe violaceus",
+    "genus": "Meloe",
+    "family": "Meloidae",
+    "habitat": "Grassland and open woodland"
+  },
+  {
+    "id": "common-carder-bee-beetle",
+    "name": "Common carder bee beetle",
+    "scientificName": "Trichius fasciatus",
+    "genus": "Trichius",
+    "family": "Scarabaeidae",
+    "habitat": "Flower-rich meadows and woodland margins"
+  }
+]
