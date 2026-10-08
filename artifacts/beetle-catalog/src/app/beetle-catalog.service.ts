@@ -13,7 +13,8 @@ export type BeetleRecord = {
 
 export type CatalogState = 'loading' | 'ready' | 'error';
 
-const coreFields = new Set(['id', 'slug', 'name', 'commonName', 'scientificName', 'genus', 'family']);
+const coreFields = new Set(['id', 'slug', 'name', 'commonName', 'scientificName', 'image', 'genus', 'family']);
+const LOCAL_PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}images/beetle-specimen.png`;
 
 function slugify(value: string): string {
   return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
@@ -26,6 +27,7 @@ export class BeetleCatalogService {
   readonly state = signal<CatalogState>('loading');
   readonly errorMessage = signal('');
   readonly sourceUrl = BEETLE_JSON_URL;
+  readonly placeholderImageUrl = LOCAL_PLACEHOLDER_IMAGE;
   private requestVersion = 0;
 
   async load(): Promise<void> {
@@ -80,12 +82,39 @@ export class BeetleCatalogService {
     return record.id;
   }
 
+  hasPlaceholderImage(record: BeetleRecord): boolean {
+    const image = typeof record.image === 'string' ? record.image.trim() : '';
+    return !image || image.replace(/^\.?\//, '') === 'images/beetle-specimen.png';
+  }
+
+  imageUrl(record: BeetleRecord): string {
+    const image = typeof record.image === 'string' ? record.image.trim() : '';
+    if (!image || this.hasPlaceholderImage(record)) return this.placeholderImageUrl;
+    if (/^(?:https?:)?\/\//i.test(image) || image.startsWith('data:image/')) return image;
+    return `${import.meta.env.BASE_URL}${image.replace(/^\.?\//, '').replace(/^\/+/, '')}`;
+  }
+
+  imageAlt(record: BeetleRecord): string {
+    return this.hasPlaceholderImage(record)
+      ? `Generic beetle illustration placeholder for ${this.displayName(record)}`
+      : this.displayName(record);
+  }
+
+  taxonomyValue(value: unknown): string {
+    if (value === 0 || (typeof value === 'string' && (!value.trim() || value.trim() === '0'))) {
+      return 'Not recorded';
+    }
+    return typeof value === 'string' ? value.trim() : this.stringify(value);
+  }
+
   extraAttributes(record: BeetleRecord): Array<{ label: string; value: string }> {
     return Object.entries(record)
       .filter(([key, value]) => !coreFields.has(key) && value !== null && value !== undefined && value !== '')
       .map(([key, value]) => ({
         label: key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' '),
-        value: Array.isArray(value) ? value.map((part) => this.stringify(part)).join(', ') : this.stringify(value),
+        value: ['order', 'suborder', 'superfamily', 'tribe'].includes(key)
+          ? this.taxonomyValue(value)
+          : Array.isArray(value) ? value.map((part) => this.stringify(part)).join(', ') : this.stringify(value),
       }));
   }
 
