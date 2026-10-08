@@ -2,8 +2,16 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BeetleCatalogService, type BeetleRecord } from './beetle-catalog.service';
 
-type GroupField = 'family' | 'genus';
+type GroupField = 'order' | 'suborder' | 'superfamily' | 'family' | 'tribe' | 'genus';
 type BeetleGroup = { label: string; records: BeetleRecord[] };
+const GROUP_FIELDS: Array<{ field: GroupField; label: string }> = [
+  { field: 'order', label: 'Order' },
+  { field: 'suborder', label: 'Suborder' },
+  { field: 'superfamily', label: 'Superfamily' },
+  { field: 'family', label: 'Family' },
+  { field: 'tribe', label: 'Tribe' },
+  { field: 'genus', label: 'Genus' },
+];
 
 @Component({
   standalone: true,
@@ -13,7 +21,7 @@ type BeetleGroup = { label: string; records: BeetleRecord[] };
       <header class="page-heading">
         <div class="eyebrow">Reference · Classification</div>
         <h1>Find your branch</h1>
-        <p>Explore the records by shared family or genus, then open any beetle card for its complete details.</p>
+        <p>Explore the records by order, suborder, superfamily, family, tribe, or genus, then open any beetle card for its complete details.</p>
       </header>
 
       @if (catalog.state() === 'loading') {
@@ -33,8 +41,9 @@ type BeetleGroup = { label: string; records: BeetleRecord[] };
         <div class="group-controls">
           <span class="group-controls-label" id="group-control-label">Group records by</span>
           <div class="group-switch" role="group" aria-labelledby="group-control-label">
-            <button type="button" [class.is-selected]="groupBy() === 'family'" [attr.aria-pressed]="groupBy() === 'family'" (click)="setGroupBy('family')">Family</button>
-            <button type="button" [class.is-selected]="groupBy() === 'genus'" [attr.aria-pressed]="groupBy() === 'genus'" (click)="setGroupBy('genus')">Genus</button>
+            @for (option of groupFields; track option.field) {
+              <button type="button" [class.is-selected]="groupBy() === option.field" [attr.aria-pressed]="groupBy() === option.field" (click)="setGroupBy(option.field)">{{ option.label }}</button>
+            }
           </div>
           <span class="group-summary">{{ groups().length }} {{ groupBy() }} groups · {{ catalog.records().length }} records</span>
         </div>
@@ -65,13 +74,14 @@ type BeetleGroup = { label: string; records: BeetleRecord[] };
 })
 export class GroupsPageComponent {
   readonly catalog = inject(BeetleCatalogService);
+  readonly groupFields = GROUP_FIELDS;
   readonly groupBy = signal<GroupField>('family');
   readonly groups = computed<BeetleGroup[]>(() => {
     const byLabel = new Map<string, BeetleGroup>();
     for (const record of this.catalog.records()) {
       const rawValue = record[this.groupBy()];
       const label = typeof rawValue === 'string' && rawValue.trim()
-        ? rawValue.trim()
+        ? rawValue.trim() === '0' ? 'Not recorded' : rawValue.trim()
         : typeof rawValue === 'number' ? String(rawValue) : 'Not recorded';
       const key = label.toLocaleLowerCase();
       const group = byLabel.get(key) ?? { label, records: [] };
