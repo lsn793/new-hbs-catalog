@@ -110,6 +110,13 @@ export class BeetleCatalogService {
       : `${this.displayName(record)} — image ${index + 1}`;
   }
 
+  taxonomyValue(value: unknown): string {
+    if (value === 0 || (typeof value === 'string' && (!value.trim() || value.trim() === '0'))) {
+      return 'Not recorded';
+    }
+    return typeof value === 'string' ? value.trim() : this.stringify(value);
+  }
+
   private isPlaceholderPath(image: string): boolean {
     return image.trim().replace(/^\.?\//, '') === 'images/beetle-specimen.png';
   }
@@ -118,13 +125,6 @@ export class BeetleCatalogService {
     if (this.isPlaceholderPath(image)) return this.placeholderImageUrl;
     if (/^(?:https?:)?\/\//i.test(image) || image.startsWith('data:image/')) return image;
     return `${import.meta.env.BASE_URL}${image.replace(/^\.?\//, '').replace(/^\/+/, '')}`;
-  }
-
-  taxonomyValue(value: unknown): string {
-    if (value === 0 || (typeof value === 'string' && (!value.trim() || value.trim() === '0'))) {
-      return 'Not recorded';
-    }
-    return typeof value === 'string' ? value.trim() : this.stringify(value);
   }
 
   extraAttributes(record: BeetleRecord): Array<{ label: string; value: string }> {

@@ -44,7 +44,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                   @if (record.family) { <span class="card-family">{{ record.family }}</span> }
                 </div>
                 <div class="card-image-wrap">
-                  <img [src]="catalog.imageUrl(record)" [alt]="catalog.imageAlt(record)" [attr.loading]="i === 0 ? 'eager' : 'lazy'" width="1024" height="1024" decoding="async">
+                  <img [src]="catalog.imageUrl(record)" [alt]="catalog.imageAlt(record)" loading="lazy" decoding="async">
                   @if (catalog.hasPlaceholderImage(record)) { <span class="image-note">Illustrative placeholder</span> }
                 </div>
                 <div class="card-content">
@@ -52,8 +52,8 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                   @if (record.scientificName) { <p class="card-scientific">{{ record.scientificName }}</p> }
                   @else { <div style="height:19px"></div> }
                   <dl class="field-list">
-                  @if (record.genus !== undefined) { <div class="field-row"><dt>Genus</dt><dd>{{ catalog.taxonomyValue(record.genus) }}</dd></div> }
-                  @if (record.family !== undefined) { <div class="field-row"><dt>Family</dt><dd>{{ catalog.taxonomyValue(record.family) }}</dd></div> }
+                    @if (record.genus !== undefined) { <div class="field-row"><dt>Genus</dt><dd>{{ catalog.taxonomyValue(record.genus) }}</dd></div> }
+                    @if (record.family !== undefined) { <div class="field-row"><dt>Family</dt><dd>{{ catalog.taxonomyValue(record.family) }}</dd></div> }
                     @for (attribute of catalog.extraAttributes(record); track attribute.label) {
                       <div class="field-row"><dt>{{ attribute.label }}</dt><dd>{{ attribute.value }}</dd></div>
                     }

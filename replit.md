@@ -21,7 +21,7 @@ A small natural-history catalog for browsing beetle records loaded from a hosted
 
 - `artifacts/beetle-catalog/src/app/` — app shell, pages, routes, and JSON loader
 - `artifacts/beetle-catalog/src/app/data-config.ts` — hosted JSON URL
-- `artifacts/beetle-catalog/public/data/beetles.json` — the user's current 10 beetle records
+- `artifacts/beetle-catalog/public/data/beetles.json` — the user's current 10 beetle records; `image` is an array of local paths
 - `artifacts/beetle-catalog/public/images/beetle-specimen.png` — shared illustrative placeholder for records without their own image
 
 ## Architecture decisions
@@ -33,9 +33,10 @@ A small natural-history catalog for browsing beetle records loaded from a hosted
 ## Product
 
 - Home page links to the specimen collection, alphabetical name index, and taxonomy groups.
-- Collection cards display available beetle fields, support search, and have stable fragment links.
-- Index entries link directly to their matching collection cards.
-- Groups page organizes the collection by order, suborder, superfamily, family, tribe, or genus, with links back to each record card.
+- Collection cards display the first image, omit descriptions, support search, and link to each beetle's details page.
+- Details pages display the description and every image path in the record's `image` array.
+- Index and group entries link directly to each beetle's details page.
+- Groups page organizes the collection by order, suborder, superfamily, family, tribe, or genus.
 - Loading, empty, and fetch/parse error states are shown explicitly.
 
 ## User preferences
