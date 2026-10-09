@@ -8,31 +8,31 @@ import { BeetleCatalogService } from './beetle-catalog.service';
   template: `
     <section class="page-wrap">
       <header class="page-heading">
-        <div class="eyebrow">Collection · Specimen records</div>
-        <h1>The beetle cabinet</h1>
-        <p>Each card is a record in its own right. Search across names and recorded details to find your next point of curiosity.</p>
+        <div class="eyebrow">Коллекция · Карточки видов</div>
+        <h1>Коллекция жуков</h1>
+        <p>Каждая карточка — отдельная запись. Ищите по названиям и характеристикам, чтобы найти интересующий вид.</p>
       </header>
       @if (catalog.state() === 'loading') {
-        <div class="skeletons" aria-label="Loading beetle records">
+        <div class="skeletons" aria-label="Загружаем карточки жуков">
           <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
         </div>
       } @else if (catalog.state() === 'error') {
         <section class="state-panel" role="alert">
-          <div><div class="eyebrow">The cabinet is closed for a moment</div><h2>Records could not be opened</h2>
-            <p>{{ catalog.errorMessage() }} Check the JSON URL in <code>src/app/data-config.ts</code>, confirm the file is reachable, then try again.</p>
-            <button type="button" (click)="catalog.load()">Try loading again</button></div>
+          <div><div class="eyebrow">Коллекция временно недоступна</div><h2>Не удалось открыть записи</h2>
+            <p>{{ catalog.errorMessage() }} Проверьте адрес JSON-файла в <code>src/app/data-config.ts</code> и убедитесь, что он доступен.</p>
+            <button type="button" (click)="catalog.load()">Повторить загрузку</button></div>
         </section>
       } @else if (catalog.records().length === 0) {
         <section class="state-panel">
-          <div><div class="eyebrow">An empty drawer</div><h2>No records yet</h2>
-            <p>The data file opened successfully but contains no beetle records. Add records to the JSON array to populate the cabinet.</p></div>
+          <div><div class="eyebrow">Пока пусто</div><h2>Записей ещё нет</h2>
+            <p>Файл данных открыт, но в нём нет записей о жуках. Добавьте записи в JSON-массив, чтобы заполнить коллекцию.</p></div>
         </section>
       } @else {
         <div class="catalog-toolbar">
-          <div class="catalog-count" aria-live="polite">{{ filtered().length }} OF {{ catalog.records().length }} RECORDS</div>
+          <div class="catalog-count" aria-live="polite">Записей: {{ filtered().length }} / {{ catalog.records().length }}</div>
           <label class="search-wrap">
             <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.6" stroke="currentColor" stroke-width="1.4"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-            <input class="search-input" type="search" [value]="query()" (input)="setQuery($event)" placeholder="Search names or recorded details" aria-label="Search beetle records">
+            <input class="search-input" type="search" [value]="query()" (input)="setQuery($event)" placeholder="Поиск по названию или характеристикам" aria-label="Поиск по каталогу жуков">
           </label>
         </div>
         @if (filtered().length) {
@@ -40,34 +40,34 @@ import { BeetleCatalogService } from './beetle-catalog.service';
             @for (record of filtered(); track record.id; let i = $index) {
               <article class="beetle-card fade-in" [id]="record.id">
                 <div class="card-topline">
-                  <span class="card-number">RECORD {{ numberLabel(i) }}</span>
+                  <span class="card-number">ЗАПИСЬ {{ numberLabel(i) }}</span>
                   @if (record.family) { <span class="card-family">{{ record.family }}</span> }
                 </div>
                 <div class="card-image-wrap">
                   <img [src]="catalog.imageUrl(record)" [alt]="catalog.imageAlt(record)" loading="lazy" decoding="async">
-                  @if (catalog.hasPlaceholderImage(record)) { <span class="image-note">Illustrative placeholder</span> }
+                  @if (catalog.hasPlaceholderImage(record)) { <span class="image-note">Иллюстрация-заглушка</span> }
                 </div>
                 <div class="card-content">
                   <h2>{{ catalog.displayName(record) }}</h2>
                   @if (record.scientificName) { <p class="card-scientific">{{ record.scientificName }}</p> }
                   @else { <div style="height:19px"></div> }
                   <dl class="field-list">
-                    @if (record.genus !== undefined) { <div class="field-row"><dt>Genus</dt><dd>{{ catalog.taxonomyValue(record.genus) }}</dd></div> }
-                    @if (record.family !== undefined) { <div class="field-row"><dt>Family</dt><dd>{{ catalog.taxonomyValue(record.family) }}</dd></div> }
+                    @if (record.genus !== undefined) { <div class="field-row"><dt>Род</dt><dd>{{ catalog.taxonomyValue(record.genus) }}</dd></div> }
+                    @if (record.family !== undefined) { <div class="field-row"><dt>Семейство</dt><dd>{{ catalog.taxonomyValue(record.family) }}</dd></div> }
                     @for (attribute of catalog.extraAttributes(record); track attribute.label) {
                       <div class="field-row"><dt>{{ attribute.label }}</dt><dd>{{ attribute.value }}</dd></div>
                     }
                   </dl>
                 </div>
-                <a class="card-link" [routerLink]="['/beetles', record.id]" [attr.aria-label]="'View details for ' + catalog.displayName(record)">View details <span aria-hidden="true">↗</span></a>
+                <a class="card-link" [routerLink]="['/beetles', record.id]" [attr.aria-label]="'Открыть карточку: ' + catalog.displayName(record)">Подробнее <span aria-hidden="true">↗</span></a>
               </article>
             }
           </div>
         } @else {
           <section class="state-panel">
-            <div><div class="eyebrow">No match in this drawer</div><h2>Nothing found</h2>
-              <p>Try a common name, genus, family, or another detail from the records.</p>
-              <button type="button" (click)="clearSearch()">Clear search</button></div>
+            <div><div class="eyebrow">Совпадений нет</div><h2>Ничего не найдено</h2>
+              <p>Попробуйте изменить запрос: введите название, род, семейство или другую характеристику.</p>
+              <button type="button" (click)="clearSearch()">Очистить поиск</button></div>
           </section>
         }
       }
