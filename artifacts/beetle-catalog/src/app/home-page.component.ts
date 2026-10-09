@@ -53,9 +53,9 @@ import { BeetleCatalogService } from './beetle-catalog.service';
         <h2>Curiosity has<br>its own order.</h2>
       </div>
       <div>
-        <p>Browse specimens one at a time, find a name in the alphabetical index, or explore the collection by taxonomic rank from order to genus.</p>
+        <p>Browse specimens one at a time, find a name in the alphabetical index, or explore the collection grouped by family and genus.</p>
         <a class="button-link" routerLink="/beetles">Step inside the cabinet <span aria-hidden="true">↗</span></a>
-        <a class="button-link secondary" routerLink="/groups">Browse taxonomic groups <span aria-hidden="true">↗</span></a>
+        <a class="button-link secondary" routerLink="/groups">Browse by family or genus <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   `,
