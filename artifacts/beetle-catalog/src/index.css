@@ -167,13 +167,14 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 @media (max-width: 600px) {
   .site-header { height: 68px; }
   .header-inner, .page-wrap, .band-inner, .footer-inner { width: calc(100% - 36px); }
-  .main-nav { gap: 15px; }
-  .main-nav a { font-size: 9px; letter-spacing: .05em; }
-  .main-nav { gap: 10px; }
-  .main-nav a { font-size: 8px; letter-spacing: .04em; }
-  .nav-index, .nav-groups { padding-left: 9px; }
-  .brand-word { font-size: 14px; }
-  .brand-mark { width: 30px; }
+  .header-inner { gap: 6px; }
+  .brand { gap: 8px; flex: 0 0 auto; }
+  .brand-mark { width: 28px; height: 30px; flex: 0 0 28px; }
+  .brand-word { font-size: 12px; line-height: 1.1; white-space: nowrap; }
+  .brand-word small { font-size: 7px; letter-spacing: .07em; white-space: nowrap; }
+  .main-nav { flex: 0 0 auto; gap: 8px; }
+  .main-nav a { font-size: 8px; letter-spacing: .02em; white-space: nowrap; }
+  .nav-index, .nav-groups { padding-left: 6px; }
   .home-hero { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 57px 0 34px; }
   .hero-copy h1 { font-size: clamp(61px, 16vw, 83px); }
   .hero-copy p { font-size: 14px; }

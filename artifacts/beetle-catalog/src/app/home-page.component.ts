@@ -8,12 +8,12 @@ import { BeetleCatalogService } from './beetle-catalog.service';
   template: `
     <section class="page-wrap home-hero">
       <div class="hero-copy fade-in">
-        <div class="eyebrow">A digital cabinet of coleoptera</div>
-        <h1>A world in<br>the <em>smallest</em><br>details.</h1>
-        <p>Meet the remarkable beetles behind the names. Browse collected species records, or find a familiar name in the reference index.</p>
+        <div class="eyebrow">Цифровая коллекция жесткокрылых</div>
+        <h1>Мир в<br><em>мельчайших</em><br>деталях.</h1>
+        <p>Откройте для себя удивительных жуков: изучайте карточки видов или найдите знакомое название в алфавитном указателе.</p>
         <div class="hero-actions">
-          <a class="button-link" routerLink="/beetles">Explore the collection <span aria-hidden="true">↗</span></a>
-          <a class="button-link secondary" routerLink="/index">Open name index</a>
+          <a class="button-link" routerLink="/beetles">Смотреть коллекцию <span aria-hidden="true">↗</span></a>
+          <a class="button-link secondary" routerLink="/index">Открыть указатель</a>
         </div>
       </div>
       <div class="hero-art fade-in">
@@ -22,19 +22,19 @@ import { BeetleCatalogService } from './beetle-catalog.service';
     </section>
     <section class="home-band">
       <div class="band-inner">
-        <div><div class="band-label">The cabinet today</div><div class="band-title">An ever-growing field guide</div></div>
+        <div><div class="band-label">Коллекция сегодня</div><div class="band-title">Справочник постоянно растёт</div></div>
         <div class="band-count">{{ countLabel }}</div>
       </div>
     </section>
     <section class="page-wrap home-lower">
       <div>
-        <div class="eyebrow">Three ways to wander</div>
-        <h2>Curiosity has<br>its own order.</h2>
+        <div class="eyebrow">Три способа исследовать</div>
+        <h2>У любопытства<br>свой порядок.</h2>
       </div>
       <div>
-        <p>Browse specimens one at a time, find a name in the alphabetical index, or explore the collection grouped by family and genus.</p>
-        <a class="button-link" routerLink="/beetles">Step inside the cabinet <span aria-hidden="true">↗</span></a>
-        <a class="button-link secondary" routerLink="/groups">Browse by family or genus <span aria-hidden="true">↗</span></a>
+        <p>Изучайте экземпляры по одному, ищите названия в алфавитном указателе или просматривайте жуков по отряду, подотряду, надсемейству, семейству, трибе и роду.</p>
+        <a class="button-link" routerLink="/beetles">Перейти к коллекции <span aria-hidden="true">↗</span></a>
+        <a class="button-link secondary" routerLink="/groups">Группировать жуков <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   `,
@@ -43,8 +43,17 @@ export class HomePageComponent {
   readonly catalog = inject(BeetleCatalogService);
   readonly logoSrc = `${import.meta.env.BASE_URL}images/biological-society-logo.jpg`;
   get countLabel(): string {
-    if (this.catalog.state() === 'loading') return 'Opening the records…';
-    if (this.catalog.state() === 'error') return 'Collection temporarily unavailable';
-    return `${this.catalog.records().length} ${this.catalog.records().length === 1 ? 'record' : 'records'} in the cabinet`;
+    if (this.catalog.state() === 'loading') return 'Открываем каталог…';
+    if (this.catalog.state() === 'error') return 'Коллекция временно недоступна';
+    const count = this.catalog.records().length;
+    return `${count} ${this.recordWord(count)} в коллекции`;
+  }
+
+  private recordWord(count: number): string {
+    const lastTwo = count % 100;
+    const last = count % 10;
+    if (last === 1 && lastTwo !== 11) return 'запись';
+    if (last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)) return 'записи';
+    return 'записей';
   }
 }

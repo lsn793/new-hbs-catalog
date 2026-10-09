@@ -17,6 +17,16 @@ export type CatalogState = 'loading' | 'ready' | 'error';
 
 const coreFields = new Set(['id', 'slug', 'name', 'commonName', 'scientificName', 'description', 'image', 'genus', 'family']);
 const LOCAL_PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}images/beetle-specimen.png`;
+const FIELD_LABELS: Record<string, string> = {
+  order: 'Отряд',
+  suborder: 'Подотряд',
+  superfamily: 'Надсемейство',
+  family: 'Семейство',
+  tribe: 'Триба',
+  genus: 'Род',
+  body_lenght: 'Длина тела',
+  body_length: 'Длина тела',
+};
 
 function slugify(value: string): string {
   return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
@@ -38,13 +48,13 @@ export class BeetleCatalogService {
     this.errorMessage.set('');
     try {
       const response = await fetch(this.sourceUrl, { headers: { Accept: 'application/json' } });
-      if (!response.ok) throw new Error(`The data file returned HTTP ${response.status}.`);
+      if (!response.ok) throw new Error(`Файл данных вернул ошибку HTTP ${response.status}.`);
       const text = await response.text();
       let parsed: unknown;
       try {
         parsed = JSON.parse(text);
       } catch {
-        throw new Error('The data file could not be parsed as JSON. Check its syntax and try again.');
+        throw new Error('Не удалось прочитать файл как JSON. Проверьте синтаксис и повторите попытку.');
       }
       const rawRecords = Array.isArray(parsed)
         ? parsed
@@ -52,11 +62,11 @@ export class BeetleCatalogService {
           ? (parsed as { beetles: unknown[] }).beetles
           : null;
       if (!rawRecords) {
-        throw new Error('Expected the JSON file to contain an array, or an object with a "beetles" array.');
+        throw new Error('Ожидался JSON-массив или объект со свойством "beetles", содержащим массив.');
       }
       const records = rawRecords.map((item, index) => {
         if (!item || typeof item !== 'object' || Array.isArray(item)) {
-          throw new Error(`Record ${index + 1} is not a JSON object.`);
+          throw new Error(`Запись ${index + 1} не является JSON-объектом.`);
         }
         const record = item as Record<string, unknown>;
         const name = typeof record.commonName === 'string' ? record.commonName
@@ -72,7 +82,7 @@ export class BeetleCatalogService {
       this.state.set('ready');
     } catch (error) {
       if (version !== this.requestVersion) return;
-      this.errorMessage.set(error instanceof Error ? error.message : 'The collection could not be loaded.');
+      this.errorMessage.set(error instanceof Error ? error.message : 'Не удалось загрузить коллекцию.');
       this.state.set('error');
     }
   }
@@ -106,13 +116,13 @@ export class BeetleCatalogService {
 
   imageAlt(record: BeetleRecord, index = 0): string {
     return this.hasPlaceholderImage(record, index)
-      ? `Generic beetle illustration placeholder for ${this.displayName(record)}`
-      : `${this.displayName(record)} — image ${index + 1}`;
+      ? `Иллюстрация-заглушка: ${this.displayName(record)}`
+      : `${this.displayName(record)} — изображение ${index + 1}`;
   }
 
   taxonomyValue(value: unknown): string {
     if (value === 0 || (typeof value === 'string' && (!value.trim() || value.trim() === '0'))) {
-      return 'Not recorded';
+      return 'Не указано';
     }
     return typeof value === 'string' ? value.trim() : this.stringify(value);
   }
@@ -131,7 +141,7 @@ export class BeetleCatalogService {
     return Object.entries(record)
       .filter(([key, value]) => !coreFields.has(key) && value !== null && value !== undefined && value !== '')
       .map(([key, value]) => ({
-        label: key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' '),
+        label: FIELD_LABELS[key] ?? key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' '),
         value: ['order', 'suborder', 'superfamily', 'tribe'].includes(key)
           ? this.taxonomyValue(value)
           : Array.isArray(value) ? value.map((part) => this.stringify(part)).join(', ') : this.stringify(value),

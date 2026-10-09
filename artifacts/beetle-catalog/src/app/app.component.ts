@@ -10,7 +10,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
     <div class="site-shell">
       <header class="site-header">
         <div class="header-inner">
-          <a class="brand" routerLink="/" aria-label="Beetle Cabinet home">
+          <a class="brand" routerLink="/" aria-label="Главная страница каталога жуков">
             <span class="brand-mark" aria-hidden="true">
               <svg viewBox="0 0 40 40" fill="none">
                 <path d="M20 11v19M14 13 9 8M26 13l5-5M13 19 7 17M27 19l6-2M13 25l-6 2M27 25l6 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -19,20 +19,20 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                 <circle cx="20" cy="9" r="3.2" fill="#536b4d" stroke="currentColor" stroke-width="1.4"/>
               </svg>
             </span>
-            <span class="brand-word">Beetle Cabinet<small>Natural history, collected</small></span>
+            <span class="brand-word">Коллекция жуков<small>Естественная история</small></span>
           </a>
-          <nav class="main-nav" aria-label="Main navigation">
-            <a routerLink="/beetles" routerLinkActive="active">The collection</a>
-            <a class="nav-index" routerLink="/index" routerLinkActive="active">Name index</a>
-            <a class="nav-groups" routerLink="/groups" routerLinkActive="active">Groups</a>
+          <nav class="main-nav" aria-label="Основная навигация">
+            <a routerLink="/beetles" routerLinkActive="active">Коллекция</a>
+            <a class="nav-index" routerLink="/index" routerLinkActive="active">Алфавитный указатель</a>
+            <a class="nav-groups" routerLink="/groups" routerLinkActive="active">Группы</a>
           </nav>
         </div>
       </header>
       <main><router-outlet /></main>
       <footer class="site-footer">
         <div class="footer-inner">
-          <span>BEETLE CABINET · A FIELD GUIDE IN PROGRESS</span>
-          <span>Records, not rankings.</span>
+          <span>КОЛЛЕКЦИЯ ЖУКОВ · СПРАВОЧНИК ПОПОЛНЯЕТСЯ</span>
+          <span>Факты, а не рейтинги.</span>
         </div>
       </footer>
     </div>

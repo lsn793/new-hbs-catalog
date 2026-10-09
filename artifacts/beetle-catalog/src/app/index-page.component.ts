@@ -10,19 +10,19 @@ type NameGroup = { letter: string; records: BeetleRecord[] };
   template: `
     <section class="page-wrap">
       <header class="page-heading index-heading">
-        <div class="eyebrow">Reference · Alphabetical</div>
-        <h1>The name index</h1>
-        <p>A quick route into the cabinet. Choose a name to open its full record.</p>
+        <div class="eyebrow">Справочник · По алфавиту</div>
+        <h1>Алфавитный указатель</h1>
+        <p>Выберите название, чтобы открыть полную карточку вида.</p>
       </header>
       @if (catalog.state() === 'loading') {
-        <div class="skeletons" aria-label="Loading the name index"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+        <div class="skeletons" aria-label="Загружаем алфавитный указатель"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
       } @else if (catalog.state() === 'error') {
-        <section class="state-panel" role="alert"><div><div class="eyebrow">Reference unavailable</div><h2>The index could not be opened</h2><p>{{ catalog.errorMessage() }} Check <code>src/app/data-config.ts</code> and try again.</p><button type="button" (click)="catalog.load()">Try loading again</button></div></section>
+        <section class="state-panel" role="alert"><div><div class="eyebrow">Справочник недоступен</div><h2>Не удалось открыть указатель</h2><p>{{ catalog.errorMessage() }} Проверьте адрес JSON-файла в <code>src/app/data-config.ts</code> и повторите попытку.</p><button type="button" (click)="catalog.load()">Повторить загрузку</button></div></section>
       } @else if (groups().length === 0) {
-        <section class="state-panel"><div><div class="eyebrow">No names filed</div><h2>The index is empty</h2><p>There are no beetle records in the current data file to list.</p></div></section>
+        <section class="state-panel"><div><div class="eyebrow">Названий пока нет</div><h2>Указатель пуст</h2><p>В текущем файле данных нет записей о жуках.</p></div></section>
       } @else {
-        <nav class="alphabet-bar" aria-label="Jump to a letter">
-          @for (group of groups(); track group.letter) { <a [href]="'#letter-' + group.letter" [attr.aria-label]="'Jump to ' + group.letter">{{ group.letter }}</a> }
+        <nav class="alphabet-bar" aria-label="Перейти к букве">
+          @for (group of groups(); track group.letter) { <a [href]="'#letter-' + group.letter" [attr.aria-label]="'Перейти к букве ' + group.letter">{{ group.letter }}</a> }
         </nav>
         <div class="index-groups">
           @for (group of groups(); track group.letter) {
