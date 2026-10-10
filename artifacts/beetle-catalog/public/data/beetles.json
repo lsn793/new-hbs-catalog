@@ -2,60 +2,76 @@
   {
     "id": 1,
     "name": "Noterus clavicornis (De Geer,1774)",
-    "description": "ЖУК улетел",
-    "image": ["images/1/1_1.jpg", "images/1/1_2.jpg"],
+    "description": "Место обитания: Стоячие или слабопроточные водоемы (пруды, лужи) с илистым дном и богатой растительностью. Особенности: Тело снизу плоское, сверху сильновыпуклое, темно-коричневое; переднегрудь со слабым килем. Питание: Активный хищник, охотится на мелких водных беспозвоночных и их личинок.",
+    "image": [
+      "images/1/1_1.jpg",
+      "images/1/1_2.jpg"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Noteridae",
     "tribe": "0",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "4-5 мм"
   },
   {
     "id": 2,
     "name": "Noterus crassicornis (O.F.Muller,1776)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/2/2_1.png", "images/2/2_2.png"],
+    "description": "Место обитания: Неглубокие стоячие водоемы, низинные болота и временные лужи с обильной водной растительностью. Особенности: Близок к N. clavicornis, но отличается строением переднеспинки и усиков; отлично роет грунт. Питание: Хищник, питается мелкими донными беспозвоночными.",
+    "image": [
+      "images/2/2_1.png",
+      "images/2/2_2.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Noteridae",
     "tribe": "0",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "4-5 мм"
   },
   {
     "id": 3,
     "name": "Orectochilus (Orectochilus) villosus (O.F.Muller,1776)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/3/3_1.jpg", "images/3/3_2.jpg"],
+    "description": "Место обитания: Реки и крупные ручьи с чистой, проточной водой. Особенности: Сумеречная вертячка; плавает на поверхности воды, совершая характерные круговые движения. Является биоиндикатором чистоты воды. Питание: Имаго и личинки — хищники и некрофаги, ловят мелких беспозвоночных, упавших на поверхность воды.",
+    "image": [
+      "images/3/3_1.jpg",
+      "images/3/3_2.jpg"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Gyrinidae",
     "tribe": "0",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "5-7 мм"
   },
   {
     "id": 4,
     "name": "Hydroporus palustris (L., 1761)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/4/4_1.png", "images/4/4_2.png"],
+    "description": "Место обитания: Эврибионтный вид, встречается повсеместно: от мелких луж и канав до болот и берегов рек. Особенности: Тело по бокам с заметной перетяжкой между переднеспинкой и надкрыльями. Питание: Хищник, охотится на мелкий зоопланктон и донных беспозвоночных.",
+    "image": [
+      "images/4/4_1.png",
+      "images/4/4_2.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hydroporini",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "3-4 мм"
   },
   {
     "id": 5,
     "name": "Hygrotus (Hygrotus) inaecualis (F., 1776)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/5/5_0.png", "images/5/5_1.png", "images/5/5_2.png"],
+    "description": "Место обитания: Различные стоячие водоемы, включая временные лужи и заболоченные участки. Особенности: Пунктировка надкрылий состоит только из крупных точек, рисунок изменчив; способен накапливать в организме токсичные металлы. Питание: Активный хищник.",
+    "image": [
+      "images/5/5_0.png",
+      "images/5/5_1.png",
+      "images/5/5_2.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
@@ -67,8 +83,11 @@
   {
     "id": 6,
     "name": "Hygrotus (Hygrotus) versicolor (Schaller,1783)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/6/6_0.png", "images/6/Hygrotus_versicolor.jpg"],
+    "description": "Место обитания: Предпочитает мелководья с илистым дном, часто встречается в прудах и болотах. Особенности: Мелких точек на надкрыльях больше, чем крупных, пунктировка переднеспинки равномерно густая по всей поверхности. Питание: Хищник на всех стадиях развития, охотится на личинок комаров и других мелких водных обитателей.",
+    "image": [
+      "images/6/6_0.png",
+      "images/6/Hygrotus_versicolor.jpg"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
@@ -80,53 +99,64 @@
   {
     "id": 7,
     "name": "Hygrotus (Hygrotus) decoratus (Gyllenhal,1810)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/7/7_1.png", "images/7/7_2.jpg", "images/7/7_3.jpg"],
+    "description": "Место обитания: Предпочитает моховые (сфагновые) и осоковые болота, верховые болота с кислой водой. Особенности: Бореальный вид, распространен в Северной и Центральной Европе. Питание: Хищник, питается мелкими водными беспозвоночными.",
+    "image": [
+      "images/7/7_1.png",
+      "images/7/7_2.jpg",
+      "images/7/7_3.jpg"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "2,2-2,7 мм"
   },
   {
     "id": 8,
     "name": "Hygrotus (Coelambus) nigrolineatus (Steven in Schonherr, 1808)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/8/8_1.png"],
+    "description": "Место обитания: Стоячие водоемы с богатой макрофитной растительностью, часто в лесной и лесостепной зонах. Особенности: Отличается характерным рисунком из черных продольных линий на надкрыльях. Питание: Хищник, охотится на мелкий зоопланктон и бентосные организмы.",
+    "image": [
+      "images/8/8_1.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "3-4 мм"
   },
   {
     "id": 9,
     "name": "Haliplus (Haliplus) ruficollis (De Geer,1774)",
-    "description": "ЖУК улетел 2",
-    "image": ["images/9/9_1.png", "images/9/9_2.png"],
+    "description": "Место обитания: Стоячие или слабопроточные водоемы с обильной растительностью (ряска, рдесты). Особенности: Задние ноги сильно уплощены и покрыты длинными волосками для плавания; личинки дышат растворенным в воде кислородом напрямую через покровы. Питание: Преимущественно растительноядный (питается водорослями), но имаго могут поедать яйца стрекоз и гидр.",
+    "image": [
+      "images/9/9_1.png",
+      "images/9/9_2.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
-    "superfamily": "Haliploidae",
+    "superfamily": "Haliploidea",
     "family": "Haliplidae",
     "tribe": "0",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "3-4 мм"
   },
   {
     "id": 10,
     "name": "Haliplus (Haliplus) lineolatus Mannerheim,1844",
-    "description": "ЖУК улетел 2",
-    "image": ["images/10/10_1.png"],
+    "description": "Место обитания: Низинные болота грунтового питания и мелкие водоемы с густой растительностью. Особенности: Характерный рисунок на надкрыльях в виде тонких черных штрихов. Питание: Как и другие плавунчики, питается в основном водорослями, но имаго способны поедать мелких животных, например, гидр.",
+    "image": [
+      "images/10/10_1.png"
+    ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
-    "superfamily": "Haliploidae",
+    "superfamily": "Haliploidea",
     "family": "Haliplidae",
     "tribe": "0",
     "genus": "0",
-    "body_lenght": 0
+    "body_lenght": "3-4 мм"
   }
 ]
