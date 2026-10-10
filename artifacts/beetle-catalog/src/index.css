@@ -130,7 +130,11 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .card-image-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .image-note { position: absolute; right: 10px; bottom: 10px; padding: 5px 8px; background: #fbfaf4e8; color: #5a6155; font: 9px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .detail-header { padding: 28px 0 24px; border-bottom: 1px solid var(--line); }
-.detail-back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color: #5a6155; font: 11px var(--mono); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.detail-header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.detail-nav { display: flex; align-items: center; gap: 16px; }
+.detail-nav-link { color: var(--text-dark); text-decoration: none; font: 500 12px var(--mono); letter-spacing: .04em; transition: color .18s ease; }
+.detail-nav-link:hover { color: var(--clay); }
+.detail-back { display: inline-flex; align-items: center; gap: 8px; color: #5a6155; font: 11px var(--mono); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 .detail-back:hover { color: var(--moss-dark); }
 .detail-header h1 { max-width: 900px; margin: 12px 0 8px; font: 400 clamp(38px, 5vw, 64px)/1 var(--serif); letter-spacing: -.045em; }
 .detail-scientific { margin: 0; color: var(--muted); font: italic 15px var(--serif); }
