@@ -15,7 +15,7 @@
     "genus": "0",
     "body_lenght": "4-5 мм"
   },
-  {
+    {
     "id": 2,
     "name": "Noterus crassicornis (O.F.Muller,1776)",
     "description": "Место обитания: Неглубокие стоячие водоемы, низинные болота и временные лужи с обильной водной растительностью. Особенности: Близок к N. clavicornis, но отличается строением переднеспинки и усиков; отлично роет грунт. Питание: Хищник, питается мелкими донными беспозвоночными.",
@@ -65,8 +65,8 @@
   },
   {
     "id": 5,
-    "name": "Hygrotus (Hygrotus) inaecualis (F., 1776)",
-    "description": "Место обитания: Различные стоячие водоемы, включая временные лужи и заболоченные участки. Особенности: Пунктировка надкрылий состоит только из крупных точек, рисунок изменчив; способен накапливать в организме токсичные металлы. Питание: Активный хищник.",
+    "name": "Hygrotus (Hygrotus) inaecualis (F., 1776), пеструшка изменчивая",
+    "description": "Широко распространен в Европе и России. Предпочитает стоячие или слабопроточные водоемы с густой растительностью (пруды, канавы, заводи). Голова довольно крупно и густо точечная, вдавления на ней широкие и глубокие, около глаз соприкасаются. Наличник очень тонко окантован. Надкрылья с чёрным основанием, швом и очень изменчивым рисунком.",
     "image": [
       "images/5/5_0.png",
       "images/5/5_1.png",
@@ -77,14 +77,13 @@
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
-    "genus": "0",
+    "genus": "Hygrotus",
     "body_lenght": "2,7-3,5 мм"
   },
   {
     "id": 6,
-    "name": "Hygrotus (Hygrotus) versicolor (Schaller,1783)",
-    "description": "Место обитания: Предпочитает мелководья с илистым дном, часто встречается в прудах и болотах. Особенности: Мелких точек на надкрыльях больше, чем крупных, пунктировка переднеспинки равномерно густая по всей поверхности. Питание: Хищник на всех стадиях развития, охотится на личинок комаров и других мелких водных обитателей.",
-    "image": [
+    "name": "Hygrotus (Hygrotus) versicolor (Schaller,1783), пеструшка разноцветная",
+    "description": "Место обитания: Предпочитает мелководья с илистым дном, часто встречается в прудах и болотах. Особенности: Мелких точек на надкрыльях больше, чем крупных, пунктировка переднеспинки равномерно густая по всей поверхности. Питание: Хищник на всех стадиях развития, охотится на личинок комаров и других мелких водных обитателей.",    "image": [
       "images/6/6_0.png",
       "images/6/Hygrotus_versicolor.jpg"
     ],
@@ -93,13 +92,13 @@
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
-    "genus": "0",
+    "genus": "Hygrotus",
     "body_lenght": "3,0-3,6 мм"
   },
   {
     "id": 7,
     "name": "Hygrotus (Hygrotus) decoratus (Gyllenhal,1810)",
-    "description": "Место обитания: Предпочитает моховые (сфагновые) и осоковые болота, верховые болота с кислой водой. Особенности: Бореальный вид, распространен в Северной и Центральной Европе. Питание: Хищник, питается мелкими водными беспозвоночными.",
+    "description": "В нашей коллекции этот жук был представлен в единственном экземпляре. В начале 2025 года мы передали экземпляр в коллекцию Новосибирского Института систематики и экологии животных (ИСиЭЖ СО РАН). Там он так же в единственном экземпляре. ",
     "image": [
       "images/7/7_1.png",
       "images/7/7_2.jpg",
@@ -110,13 +109,13 @@
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
-    "genus": "0",
+    "genus": "Hygrotus",
     "body_lenght": "2,2-2,7 мм"
   },
   {
     "id": 8,
     "name": "Hygrotus (Coelambus) nigrolineatus (Steven in Schonherr, 1808)",
-    "description": "Место обитания: Стоячие водоемы с богатой макрофитной растительностью, часто в лесной и лесостепной зонах. Особенности: Отличается характерным рисунком из черных продольных линий на надкрыльях. Питание: Хищник, охотится на мелкий зоопланктон и бентосные организмы.",
+    "description": "В России распространён от западных границ до Зап.Сибири. Характеризуется наличием темных (черных) продольных линий на надкрыльях (отсюда видовое название nigrolineatus — «чернолинейный»).",
     "image": [
       "images/8/8_1.png"
     ],
@@ -125,8 +124,8 @@
     "superfamily": "Dytiscoidea",
     "family": "Dytiscidae",
     "tribe": "Hygrotini",
-    "genus": "0",
-    "body_lenght": "3-4 мм"
+    "genus": "Coelambus",
+    "body_lenght": "3 мм"
   },
   {
     "id": 9,
@@ -138,7 +137,7 @@
     ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
-    "superfamily": "Haliploidea",
+    "superfamily": "Haliploidae",
     "family": "Haliplidae",
     "tribe": "0",
     "genus": "0",
@@ -153,10 +152,205 @@
     ],
     "order": "Coleoptera",
     "suborder": "Adephaga",
-    "superfamily": "Haliploidea",
+    "superfamily": "Haliploidae",
     "family": "Haliplidae",
     "tribe": "0",
     "genus": "0",
+    "body_lenght": 0
+  },
+  {
+    "id": 11,
+    "name": "Hydrogliphus geminus (F., 1792)  к. Псахо",
+    "description": "В России этот жук распространён от западных границ до Забайкалья.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Bidessini",
+    "genus": "Hydrogliphus",
+    "body_lenght": 0
+  },
+  {
+    "id": 12,
+    "name": "Hydroporus palustris (L., 1761), (нырялка болотная)",
+    "description": "Жуки обычно живут в чистых стоячих, чаще лесных водоемах и в крупных медленно текучих реках. Распространение: вся Европа, нагорная зона Кавказа, Закавказье, Сибирь, Турция и Иран.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hydroporini",
+    "genus": "Hydroporus",
     "body_lenght": "3-4 мм"
+   },
+  {
+    "id": 13,
+    "name": "Porhydrus lineatus (Fabricius, 1775)",
+    "description": " ",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hydroporini",
+    "genus": "Porhydrus  Guignot",
+    "body_lenght": 0
+	},
+  {
+    "id": 14,
+    "name": "Hygrotus (Hygrotus) quinquelineatus (Zetterstedt, 1828)",
+    "description": "Переднеспинка посередине пунктирована (покрыта точками) реже, чем по краям. Для самок характерен диморфизм: надкрылья могут быть с сетчатой микроскульптурой либо без нее между точками. Обитает в Европе и Северной Евразии. В России встречается на широком пространстве от западных границ страны вплоть до Магадана. Предпочитает стоячие или слабопроточные водоемы, мелиоративные каналы и заросшие участки.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hydroporini",
+    "genus": "Hygrotus",
+    "body_lenght": "3,5 мм"
+	},
+  {
+    "id": 15,
+    "name": "Hygrotus (Coelambus) novemlineatus (Stephens, 1828)",
+    "description": "Мелкий водный жук с характерным пестрым или полосатым рисунком на надкрыльях (название novemlineatus означает «девятилинейный», указывая на ряды полос на надкрыльях). Распространён в Европе и России (от западных границ до Сибири). В ряде регионов (например, в Великобритании и Ирландии) считается редким и локальным видом. Встречается в стоячих или слабопроточных водоёмах, преимущественно в бедных минеральными веществами (олиготрофных) озёрах с песчаным дном и редкой растительностью.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hydroporini",
+    "genus": "Hygrotus Coelambus",
+    "body_lenght": 0
+	},
+  {
+    "id": 16,
+    "name": "Hygrotus (Coelambus) impressopunctstus (Schaller, 1783)  ",
+    "description": "Он повсеместно распространен на территории Евразии (включая практически всю Европу, европейскую часть России, Сибирь, Дальний Восток) и в Северной Америке. Типичный обитатель мелких стоячих или слабопроточных водоемов. Их часто находят в небольших озерах, прудах, временных лужах, канавах и на мелководье с обильной растительностью. Как имаго, так и личинки являются хищниками, питающимися мелкими водными беспозвоночными. Взрослые жуки способны хорошо летать и нередко прилетают на искусственные источники света в ночное время.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hydroporini",
+    "genus": "Hygrotus Coelambus",
+    "body_lenght": "4,5–5,0 мм"
+	},
+  {
+    "id": 17,
+    "name": "Hyphydrus ovatus (L., 1761), пузанчик яйцевидный ",
+    "description": "В коллекции в единственном экземпляре. Был найден нами в Кривошеинском районе Томской области, в районе села Володино. Тело ржаво-красного цвета, иногда с неясными пятнами; самец имеет блестящий окрас, а самка матовый. Представители этого вида обитают в водоёмах со стоячей водой. Встречается в Европе, Турции, Сибири и Казахстане.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Hyphydrini",
+    "genus": "Hyphydrus",
+    "body_lenght": "4,5—5 мм"
+	},
+  {
+    "id": 18,
+    "name": "Platambus semenowi (Jacovlev, 1897) ",
+    "description": "Вид был впервые описан энтомологом Василием Яковлевым в 1897 году. Представители этой группы встречаются в высокогорных регионах Центральной Азии, северной Индии, Непала, Бутана, Пакистана и Китая. ",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Platambus",
+    "body_lenght": 0
+  },
+  {
+    "id": 19,
+    "name": "Platambus sogdianus (Jacovlev, 1897) ",
+    "description": "Вид был впервые описан энтомологом Василием Яковлевым в 1897 году. Представители рода Platambus обычно встречаются в небольших пресных водоемах, прудах, ручьях и заполненных водой канавах. Название вида sogdianus отсылает к исторической области Согдиана в Центральной Азией, что указывает на географический регион его обнаружения. ",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Platambus",
+    "body_lenght": 0
+  },
+  {
+    "id": 20,
+    "name": "Agabus (Gaurodytes) unguicularis (C.G.Thomson,1967)",
+    "description": "Хищник, обитающий в стоячих или слабопроточных пресных водоемах (мелкие озера, лужи, старицы, заболоченные участки). Имаго и личинки охотятся на мелких водных беспозвоночных. Встречается в Европе (включая Великобританию, Северную и Восточную Европу). Зафиксирован в регионах с умеренным и бореальным климатом. Вид был собран нашим обществом и передан в ИСиЭЖ СО РАН г. Новосибирск.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": "5-14 мм"
+  },
+  {
+    "id": 21,
+    "name": "Agabus (Gaurodytes) basalis (Gebler,1829), гребец основной",
+    "description": "Встречается в России (в частности, на Алтае и в Западной Сибири), а также в горных системах Центральной Азии и Средней Азии (например, в горах Чулак в Казахстане, на Памире в Горно-Бадахшанской автономной области Таджикистана). Обитает в текущих и проточных пресных водоемах.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": 0
+  },
+  {
+    "id": 22,
+    "name": "Agabus (Gaurodytes) affinis (Paykull,1798, non Stein, 1881)",
+    "description": "Вид водных хищных жуков-плавунцов, описанный шведским натуралистом Густавом Пайкулем в 1798 году. Относится к подроду Gaurodytes. Дал название отдельной видовой группе (Agabus affinis-group), представители которой отличаются особым стридуляционным (звуковым) аппаратом у самцов на третьем брюшном стерните и задних бёдрах. Широко распространён в Палеарктике (включая Европу и Ближний Восток). В России встречается на большей части территории — от западных границ до Дальнего Востока (исключая южные регионы).",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": "6-7 мм."
+  },
+  {
+    "id": 23,
+    "name": " Agabus (Acatodes) coxalis Sharp, 1882",
+    "description": "Вид хищных водных жуков, описанный британским энтомологом Дэвидом Шарпом в 1882 году. Встречается в Голарктике (включая Северную Америку, например, Канаду/Нью-Брансуик) и Евразию (включая подвиды в Турции и других регионах).",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": "5-14 мм."
+  },
+  {
+    "id": 24,
+    "name": " Agabus (Acatodes) japonicus Sharp, 1873",
+    "description": "Представители рода обитают в стоячих или слабо проточных пресных водоемах и являются хищниками.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": "5-14 мм."
+  },
+  {
+    "id": 25,
+    "name": "Agabus (Gaurodytes) dichrous Sharp, 1878",
+    "description": "Ареал обитания - Казахстан, Киргизия, Восточная Сибирь, Монголия и Западный Китай. В России встречается в Забайкалье и в Туве.",
+    "image": ["images/10/10_1.png"],
+    "order": "Coleoptera",
+    "suborder": "Adephaga",
+    "superfamily": "Hydroporinae",
+    "family": "Dytiscidae",
+    "tribe": "Agabini",
+    "genus": "Agabus",
+    "body_lenght": 0
   }
 ]
