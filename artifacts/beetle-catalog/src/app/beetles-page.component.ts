@@ -48,7 +48,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                   @if (catalog.hasPlaceholderImage(record)) { <span class="image-note">Иллюстрация-заглушка</span> }
                 </div>
                 <div class="card-content">
-                  <h2>{{ catalog.displayName(record) }}</h2>
+                  <h2><a [routerLink]="['/beetles', record.id]" [attr.aria-label]="'Открыть карточку: ' + catalog.displayName(record)">{{ catalog.displayName(record) }}</a></h2>
                   @if (record.scientificName) { <p class="card-scientific">{{ record.scientificName }}</p> }
                   @else { <div style="height:19px"></div> }
                   <dl class="field-list">

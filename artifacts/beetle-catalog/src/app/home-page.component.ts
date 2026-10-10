@@ -41,7 +41,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
 })
 export class HomePageComponent {
   readonly catalog = inject(BeetleCatalogService);
-  readonly logoSrc = `${import.meta.env.BASE_URL}images/biological-society-logo.jpg`;
+  readonly logoSrc = `${import.meta.env.BASE_URL}images/biological-society-logo.png`;
   get countLabel(): string {
     if (this.catalog.state() === 'loading') return 'Открываем каталог…';
     if (this.catalog.state() === 'error') return 'Коллекция временно недоступна';

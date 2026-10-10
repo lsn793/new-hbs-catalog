@@ -10,6 +10,7 @@
   --line: #d5d4c6;
   --moss: #536b4d;
   --moss-dark: #344a39;
+  --text-dark: #1e2820;
   --clay: #a75c41;
   --ochre: #bd9145;
   --sans: 'DM Sans', sans-serif;
@@ -38,7 +39,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .brand-word { font: 600 16px var(--serif); letter-spacing: -.02em; }
 .brand-word small { display: block; font: 500 10px var(--mono); letter-spacing: .15em; text-transform: uppercase; color: #5a6155; margin-top: 2px; }
 .main-nav { display: flex; align-items: center; gap: 30px; }
-.main-nav a { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; text-decoration: none; color: var(--moss-dark); transition: color .18s ease; }
+.main-nav a { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; text-decoration: none; color: var(--text-dark); transition: color .18s ease; }
 .main-nav a:hover, .main-nav a.active { color: var(--ink); }
 .nav-index { padding-left: 28px; border-left: 1px solid var(--line); }
 .nav-groups { padding-left: 28px; border-left: 1px solid var(--line); }
@@ -52,7 +53,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .hero-actions { display: flex; align-items: center; gap: 13px; margin-top: 35px; }
 .button-link { display: inline-flex; align-items: center; gap: 11px; padding: 13px 17px; color: #f7f5ec; background: var(--moss-dark); text-decoration: none; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; transition: background .18s ease, transform .18s ease; }
 .button-link:hover { background: var(--moss); transform: translateY(-2px); }
-.button-link.secondary { background: transparent; color: var(--moss-dark); border: 1px solid var(--line); }
+.button-link.secondary { background: transparent; color: var(--text-dark); border: 1px solid var(--line); }
 .button-link.secondary:hover { background: var(--paper-deep); }
 .hero-art { height: 455px; position: relative; display: grid; place-items: center; }
 .hero-art:before { content: ''; position: absolute; width: min(410px, 100%); aspect-ratio: 1; border-radius: 50%; background: #e5e4d4; }
@@ -84,6 +85,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .card-family { color: var(--moss); font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; text-align: right; }
 .card-content { padding: 19px 18px 20px; flex: 1; }
 .card-content h2 { margin: 0; font: 500 25px/1.05 var(--serif); letter-spacing: -.02em; }
+.card-content h2 a { color: inherit; text-decoration: none; }
+.card-content h2 a:hover { color: var(--clay); }
 .card-scientific { margin: 7px 0 19px; color: var(--muted); font: italic 13px var(--serif); }
 .field-list { border-top: 1px solid #e6e3d7; margin: 0; padding: 9px 0 0; }
 .field-row { display: grid; grid-template-columns: 84px 1fr; gap: 8px; padding: 6px 0; }
