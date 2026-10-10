@@ -38,8 +38,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .brand-word { font: 600 16px var(--serif); letter-spacing: -.02em; }
 .brand-word small { display: block; font: 500 9px var(--mono); letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
 .main-nav { display: flex; align-items: center; gap: 30px; }
-.main-nav a { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; text-decoration: none; color: var(--muted); transition: color .18s ease; }
-.main-nav a:hover, .main-nav a.active { color: var(--moss-dark); }
+.main-nav a { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; text-decoration: none; color: var(--moss-dark); transition: color .18s ease; }
+.main-nav a:hover, .main-nav a.active { color: var(--ink); }
 .nav-index { padding-left: 28px; border-left: 1px solid var(--line); }
 .nav-groups { padding-left: 28px; border-left: 1px solid var(--line); }
 .page-wrap { width: min(1180px, calc(100% - 56px)); margin: 0 auto; }
