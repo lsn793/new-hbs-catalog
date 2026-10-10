@@ -8,9 +8,9 @@ import { BeetleCatalogService } from './beetle-catalog.service';
   template: `
     <section class="page-wrap home-hero">
       <div class="hero-copy fade-in">
-        <div class="eyebrow">Цифровая коллекция жесткокрылых</div>
+        <div class="eyebrow">Коллекция водных жесткокрылых</div>
         <h1>Мир в<br><em>мельчайших</em><br>деталях.</h1>
-        <p>Откройте для себя удивительных жуков: изучайте карточки видов или найдите знакомое название в алфавитном указателе.</p>
+        <p>Коллекция собрана и хранится в Гидробиологическом обществе Заозерной школы №16 города Томска Томской области.</p>
         <div class="hero-actions">
           <a class="button-link" routerLink="/beetles">Смотреть коллекцию <span aria-hidden="true">↗</span></a>
           <a class="button-link secondary" routerLink="/index">Открыть указатель</a>
@@ -22,7 +22,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
     </section>
     <section class="home-band">
       <div class="band-inner">
-        <div><div class="band-label">Коллекция сегодня</div><div class="band-title">Справочник постоянно растёт</div></div>
+        <div><div class="band-label">Коллекция сегодня</div><div class="band-title">Коллекция постоянно пополняется</div></div>
         <div class="band-count">{{ countLabel }}</div>
       </div>
     </section>

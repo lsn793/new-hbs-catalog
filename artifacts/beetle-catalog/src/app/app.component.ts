@@ -19,7 +19,7 @@ import { BeetleCatalogService } from './beetle-catalog.service';
                 <circle cx="20" cy="9" r="3.2" fill="#536b4d" stroke="currentColor" stroke-width="1.4"/>
               </svg>
             </span>
-            <span class="brand-word">Коллекция жуков<small>Естественная история</small></span>
+            <span class="brand-word">Коллекция водных жуков<small>Гидробиологическое общество</small></span>
           </a>
           <nav class="main-nav" aria-label="Основная навигация">
             <a routerLink="/beetles" routerLinkActive="active">Коллекция</a>
@@ -31,8 +31,11 @@ import { BeetleCatalogService } from './beetle-catalog.service';
       <main><router-outlet /></main>
       <footer class="site-footer">
         <div class="footer-inner">
-          <span>КОЛЛЕКЦИЯ ЖУКОВ · СПРАВОЧНИК ПОПОЛНЯЕТСЯ</span>
-          <span>Факты, а не рейтинги.</span>
+          <span>
+            <div>Руководитель Гидробиологического общества</div>
+            <div>Кухаренко Е.В.</div>
+          </span>
+          <span>Контакты: oooplavt&#64;mail.ru</span>
         </div>
       </footer>
     </div>
