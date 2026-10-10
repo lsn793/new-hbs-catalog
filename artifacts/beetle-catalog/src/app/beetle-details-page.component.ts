@@ -20,7 +20,17 @@ import { BeetleCatalogService } from './beetle-catalog.service';
       } @else {
         @if (record(); as beetle) {
           <header class="detail-header">
+          <div class="detail-header-top">
             <a class="detail-back" routerLink="/beetles"><span aria-hidden="true">←</span> Назад к коллекции</a>
+            <div class="detail-nav">
+              @if (prevRecord()) {
+                <a class="detail-nav-link" [routerLink]="['/beetles', prevRecord().id]">← Предыдущая</a>
+              }
+              @if (nextRecord()) {
+                <a class="detail-nav-link" [routerLink]="['/beetles', nextRecord().id]">Следующая →</a>
+              }
+            </div>
+          </div>
             <div class="eyebrow">Запись {{ beetle.id }} · Карточка вида</div>
             <h1>{{ catalog.displayName(beetle) }}</h1>
             @if (beetle.scientificName && beetle.scientificName !== catalog.displayName(beetle)) {
@@ -80,6 +90,17 @@ export class BeetleDetailsPageComponent {
     { initialValue: this.route.snapshot.paramMap.get('id') ?? '' },
   );
   readonly record = computed(() => this.catalog.records().find((beetle) => beetle.id === this.recordId()));
+  readonly records = computed(() => this.catalog.records());
+  readonly prevRecord = computed(() => {
+    const list = this.records();
+    const idx = list.findIndex((r) => r.id === this.recordId());
+    return idx > 0 ? list[idx - 1] : null;
+  });
+  readonly nextRecord = computed(() => {
+    const list = this.records();
+    const idx = list.findIndex((r) => r.id === this.recordId());
+    return idx >= 0 && idx < list.length - 1 ? list[idx + 1] : null;
+  });
   readonly images = computed(() => {
     const record = this.record();
     return record ? this.catalog.imageUrls(record) : [];
